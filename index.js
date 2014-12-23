@@ -99,8 +99,8 @@ walk( startPath, function( err, results ) {
 
                         o.overridden.push( { name: s, super: p } );
                         
-                        var pScript = startPath + "/" + ( p.name ? p.name + "/" : "" ) + "/" + s;
-                        var cScript =  startPath + "/" + ( o.name ? o.name + "/" : "" ) + "/" + s;
+                        var pScript = startPath + "/" + ( p.name ? p.name + "/" : "" ) + s;
+                        var cScript =  startPath + "/" + ( o.name ? o.name + "/" : "" ) + s;
                         
                         var result = diffFiles( pScript, cScript, 'diffLines' );
 
@@ -111,8 +111,6 @@ walk( startPath, function( err, results ) {
                             console.log( "diffs:", result.diffs.length, ", left:", result.leftLines, ", right:", result.rightLines );
                             console.log( 'diff "' + interest.parentScript + '" "' + interest.childScript + '"'  );
                         }
-                        
-                        // diff with parent
 
                         break;
                     }
