@@ -1,6 +1,5 @@
 'use strict';
 
-require('colors');
 var fs = require('fs'),
     diff = require( 'diff' );
 
@@ -118,8 +117,5 @@ walk( startPath, function( err, results ) {
                 }
             } );
         }
-        // console.log( o.name, ", parent:", ( o.parent || {} ).name, ", scripts: ", o.scripts.length, ", overrides: ", o.overridden.length );
     } );
-
-    console.log()    
 } );
